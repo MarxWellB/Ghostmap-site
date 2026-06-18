@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelog — GhostMap</title>
+  <title>Changelog - GhostMap</title>
   <meta name="description" content="GhostMap version history. Every fix, every feature, every round." />
   <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,12 +77,12 @@
 
         <div class="cl-section">Fixes</div>
         <ul class="cl-items">
-          <li><strong>C# constructors</strong> — K&R and Allman constructors now appear in the Ghost Tree. Added pattern with <code style="font-size:0.82em;color:var(--violet)">[A-Z]</code> anchor to distinguish from method calls.</li>
-          <li><strong>PHP method recognition</strong> — Day-1 regex bug: <code style="font-size:0.82em;color:var(--violet)">public function foo()</code> was invisible in large PHP files because only <code style="font-size:0.82em;color:var(--violet)">static</code> consumed its trailing space. All modifiers now handle whitespace uniformly.</li>
-          <li><strong>C# <code style="font-size:0.82em;color:var(--violet)">var</code> fields</strong> — Class-level <code style="font-size:0.82em;color:var(--violet)">var</code> declarations now appear. Local variables inside method bodies are correctly suppressed.</li>
-          <li><strong>Status badge in TreeView title</strong> — GhostMap now shows <code style="font-size:0.82em;color:var(--violet)">[loading]</code>, <code style="font-size:0.82em;color:var(--violet)">[cached]</code>, <code style="font-size:0.82em;color:var(--violet)">[stale-cache]</code>, and discard reasons directly in the panel header.</li>
-          <li><strong>Restored <code style="font-size:0.82em;color:var(--violet)">setLoading()</code></strong> — A previous round removed what seemed like a redundant call; it wasn't. Stale-cached trees no longer appear as "complete" while a refresh runs.</li>
-          <li><strong>Removed background fingerprint validator</strong> — The round-5 attempt used synchronous file IO on the Extension Host main thread, causing 2–10 s freezes under RAM pressure. Removed. Optimistic trust + lazy mismatch detection remains.</li>
+          <li><strong>C# constructors</strong> - K&R and Allman constructors now appear in the Ghost Tree. Added pattern with <code style="font-size:0.82em;color:var(--violet)">[A-Z]</code> anchor to distinguish from method calls.</li>
+          <li><strong>PHP method recognition</strong> - Day-1 regex bug: <code style="font-size:0.82em;color:var(--violet)">public function foo()</code> was invisible in large PHP files because only <code style="font-size:0.82em;color:var(--violet)">static</code> consumed its trailing space. All modifiers now handle whitespace uniformly.</li>
+          <li><strong>C# <code style="font-size:0.82em;color:var(--violet)">var</code> fields</strong> - Class-level <code style="font-size:0.82em;color:var(--violet)">var</code> declarations now appear. Local variables inside method bodies are correctly suppressed.</li>
+          <li><strong>Status badge in TreeView title</strong> - GhostMap now shows <code style="font-size:0.82em;color:var(--violet)">[loading]</code>, <code style="font-size:0.82em;color:var(--violet)">[cached]</code>, <code style="font-size:0.82em;color:var(--violet)">[stale-cache]</code>, and discard reasons directly in the panel header.</li>
+          <li><strong>Restored <code style="font-size:0.82em;color:var(--violet)">setLoading()</code></strong> - A previous round removed what seemed like a redundant call; it wasn't. Stale-cached trees no longer appear as "complete" while a refresh runs.</li>
+          <li><strong>Removed background fingerprint validator</strong> - The round-5 attempt used synchronous file IO on the Extension Host main thread, causing 2-10 s freezes under RAM pressure. Removed. Optimistic trust + lazy mismatch detection remains.</li>
         </ul>
       </div>
 
@@ -96,20 +96,20 @@
 
         <div class="cl-section">Performance</div>
         <ul class="cl-items">
-          <li><strong>LSP timeout reduced</strong> — 1500 ms → 800 ms. Halves the cold-LSP stall on first open.</li>
-          <li><strong>Small-file fast path</strong> — Files under 500 lines with an active LSP skip Tree-sitter + regex entirely, saving up to 1.2 s of WASM load.</li>
-          <li><strong>Cold-start fast path (Ghost Index)</strong> — Persisted snapshots now load as trusted on activate. First open of a known file: tree paints in &lt;50 ms instead of 5–35 s.</li>
-          <li><strong>Tiny file bypass</strong> — Files under 50 lines skip the 200 ms tab-spam backpressure window.</li>
-          <li><strong>Lazy LSP warm-up</strong> — GhostMap pre-warms the active language server on activate, then staggered warm-ups for other visible editors after 2 s idle.</li>
+          <li><strong>LSP timeout reduced</strong> - 1500 ms → 800 ms. Halves the cold-LSP stall on first open.</li>
+          <li><strong>Small-file fast path</strong> - Files under 500 lines with an active LSP skip Tree-sitter + regex entirely, saving up to 1.2 s of WASM load.</li>
+          <li><strong>Cold-start fast path (Ghost Index)</strong> - Persisted snapshots now load as trusted on activate. First open of a known file: tree paints in &lt;50 ms instead of 5-35 s.</li>
+          <li><strong>Tiny file bypass</strong> - Files under 50 lines skip the 200 ms tab-spam backpressure window.</li>
+          <li><strong>Lazy LSP warm-up</strong> - GhostMap pre-warms the active language server on activate, then staggered warm-ups for other visible editors after 2 s idle.</li>
         </ul>
 
         <div class="cl-section">Fixes</div>
         <ul class="cl-items">
-          <li><strong>Live scanner references</strong> — Parent class arrows were missing in 60 k-line C#/Java files after the scanner mutated item ranges and callers held stale clones. Scanner now exposes live references.</li>
-          <li><strong>Trailing comment backtrack</strong> — Comments between two methods were absorbed into the previous block's range. Fixed for Python, Ruby, Julia, Elixir.</li>
-          <li><strong><code style="font-size:0.82em;color:var(--violet)">const</code> / <code style="font-size:0.82em;color:var(--violet)">let</code> arrow functions</strong> — <code style="font-size:0.82em;color:var(--violet)">const fetch = () => {}</code> was invisible in JS/TS/TSX. Fixed with a dedicated pattern.</li>
-          <li><strong>Multi-line string state</strong> — PHP heredocs, JS template literals, Java text blocks now tracked across lines. Braces inside strings no longer desync the frame stack.</li>
-          <li><strong>Tab-switch race condition</strong> — A slow LSP call no longer pays the full 800 ms timeout after the user switches tabs. The wait polls every 50 ms and aborts immediately.</li>
+          <li><strong>Live scanner references</strong> - Parent class arrows were missing in 60 k-line C#/Java files after the scanner mutated item ranges and callers held stale clones. Scanner now exposes live references.</li>
+          <li><strong>Trailing comment backtrack</strong> - Comments between two methods were absorbed into the previous block's range. Fixed for Python, Ruby, Julia, Elixir.</li>
+          <li><strong><code style="font-size:0.82em;color:var(--violet)">const</code> / <code style="font-size:0.82em;color:var(--violet)">let</code> arrow functions</strong> - <code style="font-size:0.82em;color:var(--violet)">const fetch = () => {}</code> was invisible in JS/TS/TSX. Fixed with a dedicated pattern.</li>
+          <li><strong>Multi-line string state</strong> - PHP heredocs, JS template literals, Java text blocks now tracked across lines. Braces inside strings no longer desync the frame stack.</li>
+          <li><strong>Tab-switch race condition</strong> - A slow LSP call no longer pays the full 800 ms timeout after the user switches tabs. The wait polls every 50 ms and aborts immediately.</li>
         </ul>
       </div>
 
@@ -123,12 +123,12 @@
 
         <div class="cl-section">Nesting correctness</div>
         <ul class="cl-items">
-          <li><strong>Allman brace support</strong> — C#, Java, C++, C, Go: methods with the opening brace on a separate line now appear correctly nested.</li>
-          <li><strong>Multi-line method signatures</strong> — TS, Java: methods with arguments spread across multiple lines are detected.</li>
-          <li><strong>Python / Ruby / Julia / Elixir nesting</strong> — Indent-stack tracker added. Indent-based languages now produce nested trees, not flat lists.</li>
-          <li><strong>Pending body FIFO queue</strong> — Two declarations queued before a <code style="font-size:0.82em;color:var(--violet)">{</code> no longer overwrite each other.</li>
-          <li><strong>Anonymous frame guard</strong> — <code style="font-size:0.82em;color:var(--violet)">const x = { run() {} }</code> no longer produces a spurious <code style="font-size:0.82em;color:var(--violet)">run</code> in the tree.</li>
-          <li><strong>Native LSP hierarchy preservation</strong> — LSP-provided children are no longer thrown away during the flatten + rebuild round trip.</li>
+          <li><strong>Allman brace support</strong> - C#, Java, C++, C, Go: methods with the opening brace on a separate line now appear correctly nested.</li>
+          <li><strong>Multi-line method signatures</strong> - TS, Java: methods with arguments spread across multiple lines are detected.</li>
+          <li><strong>Python / Ruby / Julia / Elixir nesting</strong> - Indent-stack tracker added. Indent-based languages now produce nested trees, not flat lists.</li>
+          <li><strong>Pending body FIFO queue</strong> - Two declarations queued before a <code style="font-size:0.82em;color:var(--violet)">{</code> no longer overwrite each other.</li>
+          <li><strong>Anonymous frame guard</strong> - <code style="font-size:0.82em;color:var(--violet)">const x = { run() {} }</code> no longer produces a spurious <code style="font-size:0.82em;color:var(--violet)">run</code> in the tree.</li>
+          <li><strong>Native LSP hierarchy preservation</strong> - LSP-provided children are no longer thrown away during the flatten + rebuild round trip.</li>
         </ul>
 
         <div class="cl-section">Testing infrastructure</div>
@@ -147,11 +147,11 @@
           <span class="cl-badge cl-badge--pre">Pre-release</span>
         </div>
         <ul class="cl-items">
-          <li><strong>Publish coalescer</strong> — 87% fewer TreeView event fires during a 60 k-line progressive scan.</li>
-          <li><strong>Progressive scanner</strong> — Regex-based scanner for large files, batch-yielding via <code style="font-size:0.82em;color:var(--violet)">setImmediate</code> to keep the editor responsive. C++ 60 k scan: from ~19.5 s to ~33 ms.</li>
-          <li><strong>Resumable scan</strong> — Mid-scan tab switches no longer discard minutes of partial work.</li>
-          <li><strong>SHA-256 cache fast path</strong> — Tab switch to a warm-cached file skips fingerprinting entirely.</li>
-          <li><strong>Local state persistence</strong> — <code style="font-size:0.82em;color:var(--violet)">.ghostmap/</code> snapshot file introduced.</li>
+          <li><strong>Publish coalescer</strong> - 87% fewer TreeView event fires during a 60 k-line progressive scan.</li>
+          <li><strong>Progressive scanner</strong> - Regex-based scanner for large files, batch-yielding via <code style="font-size:0.82em;color:var(--violet)">setImmediate</code> to keep the editor responsive. C++ 60 k scan: from ~19.5 s to ~33 ms.</li>
+          <li><strong>Resumable scan</strong> - Mid-scan tab switches no longer discard minutes of partial work.</li>
+          <li><strong>SHA-256 cache fast path</strong> - Tab switch to a warm-cached file skips fingerprinting entirely.</li>
+          <li><strong>Local state persistence</strong> - <code style="font-size:0.82em;color:var(--violet)">.ghostmap/</code> snapshot file introduced.</li>
         </ul>
       </div>
 
@@ -174,7 +174,7 @@
   <section class="cta-block">
     <div class="container">
       <h2>See the full iteration log.</h2>
-      <p>Every round is documented in detail in the docs — rationale, files touched, and tests that lock the behaviour in.</p>
+      <p>Every round is documented in detail in the docs - rationale, files touched, and tests that lock the behaviour in.</p>
       <a href="https://docs.ghostmap.dev" class="btn btn--outline btn--lg">Read the docs →</a>
     </div>
   </section>
@@ -197,6 +197,11 @@
         <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
         <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
         <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Legal</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="notices.html">Third-Party Notices</a></li>
       </ul></div>
       <div class="footer__col"><h4>Community</h4><ul>
         <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>

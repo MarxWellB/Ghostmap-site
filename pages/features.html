@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Features — GhostMap</title>
+  <title>Features - GhostMap</title>
   <meta name="description" content="Everything GhostMap can do: Ghost Tree, Ghost Ranges, Ghost Anchors, Ghost Index, diagnostics, and multi-language support." />
   <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +71,7 @@
             on top as anchors with status and description.
           </p>
           <p>
-            The result is a navigable tree that reflects real structure — not what you
+            The result is a navigable tree that reflects real structure - not what you
             named your folders, not what you remember. Click any node to jump directly
             to that line.
           </p>
@@ -88,7 +88,7 @@
               <span class="panel__dot panel__dot--y"></span>
               <span class="panel__dot panel__dot--g"></span>
             </div>
-            <span class="panel__title">GHOSTMAP — Filter · Reset · Search</span>
+            <span class="panel__title">GHOSTMAP - Filter · Reset · Search</span>
           </div>
           <div class="panel__body">
             <div class="tree">
@@ -153,7 +153,7 @@
           <p>
             Wrap any block of code between <code style="font-size:0.85em;color:var(--violet)">// @ghost #name start</code> and
             <code style="font-size:0.85em;color:var(--violet)">// @ghost end</code> and GhostMap creates a named parent node
-            that owns everything inside — regardless of language structure.
+            that owns everything inside - regardless of language structure.
           </p>
           <p>
             Ideal for large refactors, ongoing migrations, or "hot zones" you want to
@@ -228,7 +228,7 @@
           <h2>Opens in milliseconds.<br />Not seconds.</h2>
           <p>
             The Ghost Index is the loading engine. Every time GhostMap analyzes a file,
-            it persists the result — symbols, anchors, tree — into a local snapshot.
+            it persists the result - symbols, anchors, tree - into a local snapshot.
           </p>
           <p>
             Next time you open that file, the tree appears instantly from the snapshot.
@@ -237,7 +237,7 @@
           <div style="margin-top:24px;display:flex;flex-direction:column;gap:12px">
             <div style="display:flex;align-items:center;gap:12px;font-size:0.88rem">
               <span style="background:var(--violet-dim);color:var(--violet-bright);border-radius:4px;padding:2px 8px;font-family:var(--font-mono);font-size:0.78rem">without index</span>
-              <span style="color:var(--text-muted)">LSP cold start: 5 – 35 s</span>
+              <span style="color:var(--text-muted)">LSP cold start: 5 - 35 s</span>
             </div>
             <div style="display:flex;align-items:center;gap:12px;font-size:0.88rem">
               <span style="background:rgba(74,222,128,0.12);color:var(--green);border-radius:4px;padding:2px 8px;font-family:var(--font-mono);font-size:0.78rem">with Ghost Index</span>
@@ -300,7 +300,7 @@
         </div>
         <div class="feat-card">
           <h3>Invalid status</h3>
-          <p>A status value that isn't recognized. Quick fix: suggests the closest valid value — or <code style="font-size:0.82em;color:var(--violet)">todo</code> as default.</p>
+          <p>A status value that isn't recognized. Quick fix: suggests the closest valid value - or <code style="font-size:0.82em;color:var(--violet)">todo</code> as default.</p>
         </div>
       </div>
     </div>
@@ -310,7 +310,7 @@
   <section class="section section--bordered" id="languages">
     <div class="container">
       <div class="section__head">
-        <div class="section__label">Ghost Engine — Language Support</div>
+        <div class="section__label">Ghost Engine - Language Support</div>
         <h2 class="section__title">19 languages. Three quality tiers.</h2>
         <p class="section__desc">
           The language engine stacks three extractors in order: LSP (if active),
@@ -324,7 +324,7 @@
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
             <span style="width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;flex-shrink:0"></span>
             <span style="font-size:0.85rem;font-weight:700;color:var(--green)">First-class</span>
-            <span style="font-size:0.82rem;color:var(--text-faint)">— symbol extraction + full nesting</span>
+            <span style="font-size:0.82rem;color:var(--text-faint)">- symbol extraction + full nesting</span>
           </div>
           <div class="lang-grid">
             <span class="lang-pill"><span class="tier tier--1"></span>TypeScript</span>
@@ -347,7 +347,7 @@
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
             <span style="width:10px;height:10px;border-radius:50%;background:var(--amber);display:inline-block;flex-shrink:0"></span>
             <span style="font-size:0.85rem;font-weight:700;color:var(--amber)">Best-effort</span>
-            <span style="font-size:0.82rem;color:var(--text-faint)">— symbols extract; nesting may be partial</span>
+            <span style="font-size:0.82rem;color:var(--text-faint)">- symbols extract; nesting may be partial</span>
           </div>
           <div class="lang-grid">
             <span class="lang-pill"><span class="tier tier--2"></span>Go</span>
@@ -360,7 +360,7 @@
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
             <span style="width:10px;height:10px;border-radius:50%;background:var(--red);display:inline-block;flex-shrink:0"></span>
             <span style="font-size:0.85rem;font-weight:700;color:var(--red)">Top-level only</span>
-            <span style="font-size:0.82rem;color:var(--text-faint)">— coarse index; deep nesting unreliable</span>
+            <span style="font-size:0.82rem;color:var(--text-faint)">- coarse index; deep nesting unreliable</span>
           </div>
           <div class="lang-grid">
             <span class="lang-pill"><span class="tier tier--3"></span>Scala</span>
@@ -375,7 +375,7 @@
         <strong style="color:var(--text)">How the engine picks an extractor:</strong>
         LSP → Tree-sitter WASM → regex fallback. The Ghost Engine tries LSP first with an 800 ms timeout.
         If the language server isn't available or is slow, it falls back to the next layer automatically.
-        You always get a tree — it just might be less detailed for tier-2/3 languages.
+        You always get a tree - it just might be less detailed for tier-2/3 languages.
       </div>
     </div>
   </section>
@@ -410,6 +410,11 @@
         <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
         <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
         <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Legal</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="notices.html">Third-Party Notices</a></li>
       </ul></div>
       <div class="footer__col"><h4>Community</h4><ul>
         <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>
