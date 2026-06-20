@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing &amp; Plans - GhostMap</title>
+  <meta name="description" content="GhostMap plans, the Early Access program, and the seniority-tier discount system. Community is free. Commercial, Early Commercial and Early Supporter fund the road to V2 and Enterprise." />
+  <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://marxwellb.github.io/Ghostmap-site/pages/pricing.html" />
+  <meta name="theme-color" content="#080810" />
+  <meta name="author" content="GhostMap contributors" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GhostMap" />
+  <meta property="og:title" content="Pricing &amp; Plans - GhostMap" />
+  <meta property="og:description" content="Community is free. Commercial $3/user/month. Early Commercial $5/user/month. Early Supporter $25 one-time. Enterprise on request." />
+  <meta property="og:url" content="https://marxwellb.github.io/Ghostmap-site/pages/pricing.html" />
+  <meta property="og:image" content="../img/ghost-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pricing &amp; Plans - GhostMap" />
+  <meta name="twitter:description" content="Community is free. Commercial $3/user/month. Early Commercial $5/user/month. Early Supporter $25 one-time. Enterprise on request." />
+  <meta name="twitter:image" content="../img/ghost-logo.png" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 32px; }
+    .price-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 26px 24px; display: flex; flex-direction: column; gap: 14px; position: relative; }
+    .price-card--accent { border-color: var(--violet); box-shadow: 0 0 0 1px var(--violet-dim) inset; }
+    .price-card__tag { position: absolute; top: -10px; right: 18px; background: var(--violet); color: var(--bg); font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .price-card h3 { font-family: var(--font-display); margin: 0; font-size: 1.15rem; }
+    .price-card__price { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--text); line-height: 1.1; }
+    .price-card__price small { display: block; font-size: 0.78rem; font-weight: 500; color: var(--text-faint); margin-top: 4px; letter-spacing: 0.02em; }
+    .price-card__for { font-size: 0.82rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; margin: 0; }
+    .price-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .price-card li { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; padding-left: 18px; position: relative; }
+    .price-card li::before { content: ""; position: absolute; left: 2px; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--violet); }
+    .price-card__goal { margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--border); font-size: 0.82rem; color: var(--text-faint); font-style: italic; }
+
+    .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 22px; }
+    .tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 18px 18px 16px; }
+    .tier-card__name { font-family: var(--font-display); font-size: 0.95rem; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+    .tier-card__dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .tier-card--founder .tier-card__dot { background: var(--violet-bright); }
+    .tier-card--pioneer .tier-card__dot { background: var(--violet); }
+    .tier-card--early .tier-card__dot { background: var(--amber); }
+    .tier-card--supporter .tier-card__dot { background: var(--green); }
+    .tier-card__pct { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--text); margin: 6px 0 4px; }
+    .tier-card__label { font-size: 0.78rem; color: var(--text-faint); }
+
+    .policy { max-width: 760px; }
+    .policy h2 { font-family: var(--font-display); font-size: 1.4rem; margin-top: 42px; margin-bottom: 14px; }
+    .policy h3 { font-size: 1.05rem; margin-top: 24px; margin-bottom: 8px; color: var(--text); }
+    .policy p, .policy li { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; }
+    .policy ul { padding-left: 20px; }
+    .policy .effective { font-size: 0.8rem; color: var(--text-faint); margin-top: -6px; }
+    .policy .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--violet); padding: 16px 20px; border-radius: var(--r); margin: 20px 0; font-size: 0.92rem; color: var(--text); }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="../index.html" class="nav__brand">
+      <img src="../img/ghost-logo.png" alt="GhostMap" />
+      GhostMap
+    </a>
+    <nav>
+      <ul class="nav__links" id="primary-nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="pricing.html" aria-current="page">Pricing</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="https://docs.ghostmap.dev" target="_blank" rel="noopener">Docs &#8599;</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">Install</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero hero--center">
+    <div class="container">
+      <div class="hero__eyebrow"><span class="dot"></span> Pricing</div>
+      <h1>Free for devs.<br /><em>Fair for teams.</em></h1>
+      <p class="hero__sub">
+        GhostMap V1 is free for personal use, students, open source projects and individual developers.
+        Teams and companies fund the road to V2 through transparent, low-cost commercial plans &mdash;
+        and early supporters keep a permanent discount on whatever ships next.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ PLANS ═══════════════════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">Plans</div>
+        <h2 class="section__title">Pick the plan that fits how you use GhostMap.</h2>
+        <p class="section__desc">
+          Every plan ships with the same V1 feature set. The difference is who is allowed to use it commercially,
+          who gets early access to V2, and who locks in a permanent discount as part of the Early Access program.
+        </p>
+      </div>
+
+      <div class="price-grid">
+
+        <!-- Community -->
+        <div class="price-card">
+          <h3>GhostMap Community</h3>
+          <div class="price-card__price">$0<small>Free forever</small></div>
+          <p class="price-card__for">For</p>
+          <ul>
+            <li>Personal use</li>
+            <li>Students</li>
+            <li>Open source projects</li>
+            <li>Individual developers</li>
+          </ul>
+          <p class="price-card__for">Includes</p>
+          <ul>
+            <li>All current GhostMap V1 features</li>
+            <li>Updates</li>
+            <li>Community support</li>
+          </ul>
+          <div class="price-card__goal">Goal: adoption.</div>
+        </div>
+
+        <!-- Commercial -->
+        <div class="price-card">
+          <h3>GhostMap Commercial</h3>
+          <div class="price-card__price">$3<small>per user / month</small></div>
+          <p class="price-card__for">For</p>
+          <ul>
+            <li>Companies</li>
+            <li>Consultancies</li>
+            <li>Development teams</li>
+            <li>Software agencies</li>
+          </ul>
+          <p class="price-card__for">Includes</p>
+          <ul>
+            <li>Authorized commercial use</li>
+            <li>All GhostMap V1 features</li>
+            <li>Commercial-version updates</li>
+            <li>Basic support</li>
+          </ul>
+          <div class="price-card__goal">Goal: monetize companies from day one. Recurring revenue. Validate commercial demand.</div>
+        </div>
+
+        <!-- Early Commercial -->
+        <div class="price-card price-card--accent">
+          <span class="price-card__tag">Recommended</span>
+          <h3>GhostMap Early Commercial</h3>
+          <div class="price-card__price">$5<small>per user / month</small></div>
+          <p class="price-card__for">Everything in Commercial, plus</p>
+          <ul>
+            <li>Early access to V2 features</li>
+            <li>Beta access</li>
+            <li>Priority support</li>
+            <li>Direct feedback channel</li>
+            <li>Permanent <strong>15% discount</strong> on future Enterprise licenses</li>
+          </ul>
+          <div class="price-card__goal">Goal: fund V2 development. Build a community of committed companies.</div>
+        </div>
+
+        <!-- Early Supporter -->
+        <div class="price-card">
+          <h3>GhostMap Early Supporter</h3>
+          <div class="price-card__price">$25<small>one-time payment</small></div>
+          <p class="price-card__for">For individual users</p>
+          <ul>
+            <li>Early access to selected features</li>
+            <li>Beta participation</li>
+            <li>Early Supporter badge</li>
+            <li>Permanent <strong>15% discount</strong> on future individual licenses</li>
+          </ul>
+          <div class="price-card__goal">Goal: fund development. Build community.</div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="price-card">
+          <h3>GhostMap Enterprise</h3>
+          <div class="price-card__price">Custom<small>pricing on request</small></div>
+          <p class="price-card__for">For</p>
+          <ul>
+            <li>Mid-size teams</li>
+            <li>Tech companies</li>
+            <li>Organizations with many developers</li>
+          </ul>
+          <p class="price-card__for">Includes</p>
+          <ul>
+            <li>Advanced collaboration features</li>
+            <li>Integrations &amp; admin tooling</li>
+            <li>Knowledge-management capabilities</li>
+          </ul>
+          <div class="price-card__goal">Goal: scale to teams. Pricing announced together with the first Enterprise release.</div>
+        </div>
+
+      </div>
+
+      <div class="callout" style="margin-top:32px;border-left-color:var(--violet)">
+        <strong>Why this structure.</strong> Each tier has a clear role: <em>Community</em> drives adoption,
+        <em>Commercial ($3)</em> covers basic commercial use, <em>Early Commercial ($5)</em> funds growth,
+        and <em>Enterprise</em> handles scale. The $3 vs $5 gap is small on purpose: a company that believes in the V2 vision
+        will pick Early Commercial, while a company that only needs V1 today can stay on Commercial.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EARLY ACCESS POLICY ═══════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container policy">
+      <div class="section__head" style="text-align:left">
+        <div class="section__label">Policy</div>
+        <h2 class="section__title">GhostMap Early Access Program Policy</h2>
+      </div>
+
+      <p class="effective"><strong>Effective date:</strong> June 18, 2026 · <strong>Version:</strong> 1.0</p>
+
+      <h2>Purpose of the program</h2>
+      <p>The GhostMap Early Access program was created so that developers, teams and organizations can support the growth and evolution of GhostMap during its early stages.</p>
+      <p>Participants get early access to new features, participate in early testing and receive special commercial benefits as recognition for their support.</p>
+
+      <h2>Available plans</h2>
+
+      <h3>GhostMap Community</h3>
+      <p>Free. For individual developers, students, personal projects and open source projects. Includes access to the features available in the Community version.</p>
+
+      <h3>GhostMap Commercial</h3>
+      <p>Standard commercial license for companies, teams and organizations that use GhostMap for professional or commercial purposes. The price may change as new features, services or capabilities are added to the product.</p>
+
+      <h3>GhostMap Early Commercial</h3>
+      <p>Early-access commercial license for organizations that want to support the development of GhostMap and access new capabilities ahead of their general release. Includes:</p>
+      <ul>
+        <li>Active commercial license.</li>
+        <li>Early access to eligible features.</li>
+        <li>Participation in beta programs.</li>
+        <li>Priority support.</li>
+        <li>Seniority benefits according to the tier reached inside the program.</li>
+      </ul>
+
+      <h3>GhostMap Early Supporter</h3>
+      <p>Program for individual users who want to support GhostMap's development. Includes:</p>
+      <ul>
+        <li>Early access to selected features.</li>
+        <li>Participation in beta testing.</li>
+        <li>Exclusive benefits for early members.</li>
+        <li>Seniority benefits according to the tier reached inside the program.</li>
+      </ul>
+
+      <h2>Seniority tier system</h2>
+      <p>Early Access participants receive a seniority tier based on the stage of development at which they joined the program. Tiers reflect the support given during the project's early stages.</p>
+
+      <div class="tier-grid">
+        <div class="tier-card tier-card--founder">
+          <h3 class="tier-card__name"><span class="tier-card__dot"></span>Founder Tier</h3>
+          <div class="tier-card__pct">10%</div>
+          <div class="tier-card__label">Maximum commercial benefit. Discount on future eligible licenses.</div>
+        </div>
+        <div class="tier-card tier-card--pioneer">
+          <h3 class="tier-card__name"><span class="tier-card__dot"></span>Pioneer Tier</h3>
+          <div class="tier-card__pct">7.5%</div>
+          <div class="tier-card__label">Discount on future eligible licenses.</div>
+        </div>
+        <div class="tier-card tier-card--early">
+          <h3 class="tier-card__name"><span class="tier-card__dot"></span>Early Tier</h3>
+          <div class="tier-card__pct">5%</div>
+          <div class="tier-card__label">Discount on future eligible licenses.</div>
+        </div>
+        <div class="tier-card tier-card--supporter">
+          <h3 class="tier-card__name"><span class="tier-card__dot"></span>Supporter Tier</h3>
+          <div class="tier-card__pct">2.5%</div>
+          <div class="tier-card__label">Discount on future eligible licenses.</div>
+        </div>
+      </div>
+
+      <h2>Applying the benefits</h2>
+      <p>Discounts earned through the Early Access tiers:</p>
+      <ul>
+        <li>Apply to the then-current price of eligible licenses.</li>
+        <li>Remain in effect while the participant keeps an active subscription in good standing.</li>
+        <li>Are not transferable.</li>
+        <li>Cannot be combined with other promotional programs except with GhostMap's express authorization.</li>
+      </ul>
+
+      <h2>Duration of benefits</h2>
+      <p>Commercial benefits associated with the Early Access program have a maximum duration of <strong>five (5) years</strong>, counted from the official release date of the first Enterprise version of GhostMap.</p>
+      <p>After that period, licenses move to the commercial terms in effect at that time. Historical recognition, badges and early-member status may be preserved beyond that period at GhostMap's discretion.</p>
+
+      <h2>Product evolution</h2>
+      <p>GhostMap may add new features, modules, integrations, collaboration tooling, cloud services or enterprise capabilities. As a result, license prices may change to reflect:</p>
+      <ul>
+        <li>New features.</li>
+        <li>Operating costs.</li>
+        <li>Infrastructure costs.</li>
+        <li>Support costs.</li>
+        <li>Research and development costs.</li>
+        <li>Market conditions.</li>
+      </ul>
+      <p>Early Access participants keep the benefits matching their seniority tier in accordance with this policy.</p>
+
+      <h2>Early access (technical caveat)</h2>
+      <p>Features distributed through early access may:</p>
+      <ul>
+        <li>Change.</li>
+        <li>Be modified.</li>
+        <li>Be delayed.</li>
+        <li>Be replaced.</li>
+        <li>Be removed.</li>
+      </ul>
+      <p>GhostMap does not guarantee specific release dates for future features. Roadmaps, demos, proposals and public documents represent development goals only and do not constitute contractual commitments.</p>
+
+      <h2>Program termination</h2>
+      <p>GhostMap may close the Early Access program at any time. Once closed:</p>
+      <ul>
+        <li>No new participants will be admitted.</li>
+        <li>Existing participants keep the tier they earned.</li>
+        <li>Benefits continue to apply in accordance with this policy.</li>
+      </ul>
+
+      <h2>Changes to this policy</h2>
+      <p>GhostMap may update this policy as needed to reflect operational, technical, commercial or legal changes. Changes will not retroactively reduce benefits already earned by active participants, except where required by law or by extraordinary circumstances related to the viability of the service.</p>
+
+      <div class="callout">
+        <strong>About this document.</strong> This is a community-drafted, plain-language version of the program policy.
+        It is not a substitute for a written commercial agreement &mdash; the final binding terms for any paid plan will be provided
+        as part of the order or license document at sign-up.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══════════════════════════════════════════════ -->
+  <section class="cta-block">
+    <div class="container">
+      <h2>Start with Community. Upgrade when it pays off.</h2>
+      <p>Free, open source, and built for any developer. Commercial plans and Early Access seats open as the first Enterprise milestone approaches.</p>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+        <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--lg">Install for VS Code</a>
+        <a href="roadmap.html" class="btn btn--outline btn--lg">See the roadmap →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><img src="../img/ghost-logo.png" alt="GhostMap" /> GhostMap</div>
+        <p class="footer__tagline">Turn code annotations into project maps.</p>
+      </div>
+      <div class="footer__col"><h4>Product</h4><ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Resources</h4><ul>
+        <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
+        <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
+        <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Legal</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="notices.html">Third-Party Notices</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Community</h4><ul>
+        <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>
+        <li><a href="https://github.com/ghostmap/discussions" target="_blank">Discussions</a></li>
+        <li><a href="https://github.com/ghostmap/issues" target="_blank">Issues</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>MIT Licensed · Made with 💜 by developers</span>
+      <span>© <span id="year">2026</span> GhostMap</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
