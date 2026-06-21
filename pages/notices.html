@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Third-Party Notices - GhostMap</title>
+  <meta name="description" content="GhostMap includes third-party components. Each keeps its own upstream license. Exact upstream LICENSE text ships inside the extension." />
+  <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://ghostmap-liard.vercel.app/pages/notices.html" />
+  <meta name="theme-color" content="#080810" />
+  <meta name="author" content="GhostMap contributors" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GhostMap" />
+  <meta property="og:title" content="Third-Party Notices - GhostMap" />
+  <meta property="og:description" content="Third-party attribution: web-tree-sitter and 19 Tree-sitter grammars." />
+  <meta property="og:url" content="https://ghostmap-liard.vercel.app/pages/notices.html" />
+  <meta property="og:image" content="../img/ghost-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Third-Party Notices - GhostMap" />
+  <meta name="twitter:description" content="Third-party attribution: web-tree-sitter and 19 Tree-sitter grammars." />
+  <meta name="twitter:image" content="../img/ghost-logo.png" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .legal { max-width: 860px; }
+    .legal h2 { font-family: var(--font-display); font-size: 1.4rem; margin-top: 42px; margin-bottom: 14px; }
+    .legal p, .legal li { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; }
+    .legal table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.88rem; }
+    .legal th, .legal td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .legal th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-faint); }
+    .legal td code { font-size: 0.85em; color: var(--violet); }
+    .legal .effective { font-size: 0.8rem; color: var(--text-faint); margin-top: -6px; }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="../index.html" class="nav__brand">
+      <img src="../img/ghost-logo.png" alt="GhostMap" />
+      GhostMap
+    </a>
+    <nav>
+      <ul class="nav__links" id="primary-nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Docs &#8599;</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">Contact</a>
+      <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--sm">Install</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero hero--center">
+    <div class="container">
+      <div class="hero__eyebrow"><span class="dot"></span> Legal</div>
+      <h1>Third-Party Notices</h1>
+      <p class="hero__sub">GhostMap includes third-party components. Each keeps its own upstream license; the exact upstream LICENSE text ships inside the extension.</p>
+    </div>
+  </section>
+
+  <section class="section section--bordered">
+    <div class="container legal">
+      <p class="effective"><strong>Effective date:</strong> June 20, 2026 · <strong>Version:</strong> 1.2</p>
+
+      <h2>Runtime dependencies</h2>
+      <p>GhostMap's free non-commercial license applies only to original GhostMap code. It does not replace, override, or relicense third-party components, including Tree-sitter, web-tree-sitter, WebAssembly grammars, VS Code, or site fonts. The exact upstream LICENSE text for every bundled component listed below ships inside the extension under <code>wasm/licenses/&lt;component&gt;/</code>, alongside a <code>SOURCE.txt</code> provenance file.</p>
+      <p><strong>web-tree-sitter</strong> · <code>0.26.8</code> · MIT. The WebAssembly runtime that powers the Tree-sitter layer of the Ghost Engine. Authored by the tree-sitter project. Source: <a href="https://github.com/tree-sitter/tree-sitter" target="_blank" rel="noopener">github.com/tree-sitter/tree-sitter</a>.</p>
+
+      <h2>Bundled Tree-sitter grammars</h2>
+      <p>The following 19 grammars ship as precompiled WebAssembly files inside the extension. Each is the work of its respective authors and is redistributed unmodified. The exact upstream LICENSE text is shipped under <code>wasm/licenses/&lt;folder&gt;/LICENSE</code>.</p>
+
+      <table>
+        <thead>
+          <tr><th>Grammar</th><th>Upstream</th><th>License</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>tree-sitter-c</code></td><td>tree-sitter/tree-sitter-c</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-cpp</code></td><td>tree-sitter/tree-sitter-cpp</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-c_sharp</code></td><td>tree-sitter/tree-sitter-c-sharp</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-dart</code></td><td>UserNobody14/tree-sitter-dart</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-elixir</code></td><td>elixir-lang/tree-sitter-elixir</td><td>Apache-2.0</td></tr>
+          <tr><td><code>tree-sitter-go</code></td><td>tree-sitter/tree-sitter-go</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-groovy</code></td><td>murtaza64/tree-sitter-groovy</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-java</code></td><td>tree-sitter/tree-sitter-java</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-javascript</code></td><td>tree-sitter/tree-sitter-javascript</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-julia</code></td><td>tree-sitter/tree-sitter-julia</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-objc</code></td><td>jiyee/tree-sitter-objc</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-php</code></td><td>tree-sitter/tree-sitter-php</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-python</code></td><td>tree-sitter/tree-sitter-python</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-ruby</code></td><td>tree-sitter/tree-sitter-ruby</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-rust</code></td><td>tree-sitter/tree-sitter-rust</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-scala</code></td><td>tree-sitter/tree-sitter-scala</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-solidity</code></td><td>JoranHonig/tree-sitter-solidity</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-tsx</code></td><td>tree-sitter/tree-sitter-typescript</td><td>MIT</td></tr>
+          <tr><td><code>tree-sitter-typescript</code></td><td>tree-sitter/tree-sitter-typescript</td><td>MIT</td></tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:0.85rem;color:var(--text-faint);margin-top:14px">Provenance note: the exact git commit/tag used to compile each shipped WASM artifact is not recorded in the source repository &mdash; the WASMs are checked-in artifacts rather than reproducibly built. Each per-component <code>SOURCE.txt</code> shipped under <code>wasm/licenses/</code> records the upstream default-branch HEAD commit at the time the LICENSE text was fetched. The shipped LICENSE files are the best available license notices for the bundled artifacts under that provenance disclosure; if the upstream license for a grammar later changes, the notice that shipped with a given release continues to govern that release.</p>
+
+      <h2>VS Code Extension API</h2>
+      <p>GhostMap calls into the VS Code Extension API published by Microsoft. The API contract is governed by the <a href="https://code.visualstudio.com/api" target="_blank">VS Code Extension Guidelines</a>.</p>
+
+      <h2>Site fonts</h2>
+      <p>This site uses the <strong>Space Grotesk</strong>, <strong>Inter</strong>, and <strong>JetBrains Mono</strong> typefaces under the SIL Open Font License 1.1, served via Google Fonts.</p>
+
+      <h2>Reporting an attribution issue</h2>
+      <p>If you believe a component is missing from this page, or that an attribution or license is incorrect, contact <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a> so it can be corrected.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><img src="../img/ghost-logo.png" alt="GhostMap" /> GhostMap</div>
+        <p class="footer__tagline">Turn code annotations into project maps.</p>
+      </div>
+      <div class="footer__col"><h4>Product</h4><ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Resources</h4><ul>
+        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/get-started/instalacion">Quick start</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/reference/sintaxis">Syntax reference</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Legal</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="notices.html">Third-Party Notices</a></li>
+        <li>Free for personal, educational &amp; evaluation use</li>
+        <li>Commercial use needs a license</li>
+        <li>Legal inquiries: <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Community</h4><ul>
+        <li><a href="../index.html#support">Support GhostMap</a></li>
+        <li><a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>Free for personal, educational &amp; evaluation use · Commercial use needs a license</span>
+      <span>© <span id="year">2026</span> GhostMap</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
