@@ -20,11 +20,11 @@
   <meta property="og:title" content="Changelog - GhostMap" />
   <meta property="og:description" content="GhostMap release notes. Every fix, every feature, every round, with the reasoning behind it." />
   <meta property="og:url" content="https://ghostmap-liard.vercel.app/pages/changelog.html" />
-  <meta property="og:image" content="../img/ghost-logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://ghostmap-liard.vercel.app/img/ghost-logo.png" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Changelog - GhostMap" />
   <meta name="twitter:description" content="GhostMap release notes. Every fix, every feature, every round, with the reasoning behind it." />
-  <meta name="twitter:image" content="../img/ghost-logo.png" />
+  <meta name="twitter:image" content="https://ghostmap-liard.vercel.app/img/ghost-logo.png" />
 
   <link rel="stylesheet" href="../css/styles.css" />
   <style>
@@ -39,7 +39,7 @@
     .cl-badge--pre { background: var(--violet-dim); color: var(--violet-bright); }
     .cl-items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
     .cl-items li { display: flex; gap: 10px; font-size: 0.9rem; color: var(--text-muted); }
-    .cl-items li::before { content: '→'; color: var(--violet); flex-shrink: 0; }
+    .cl-items li::before { content: '&rarr;'; color: var(--violet); flex-shrink: 0; }
     .cl-section { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); margin: 16px 0 8px; }
   </style>
 </head>
@@ -61,12 +61,12 @@
         <li><a href="how-it-works.html">How it works</a></li>
         <li><a href="roadmap.html">Roadmap</a></li>
         <li><a href="changelog.html">Changelog</a></li>
-        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Docs ↗</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/overview" target="_blank" rel="noopener">Docs &#8599;</a></li>
       </ul>
     </nav>
     <div class="nav__right">
       <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">Contact</a>
-      <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--sm">Install</a>
+      <a href="https://ghostmap-docs.vercel.app/install" class="btn btn--primary btn--sm">Install</a>
       <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -130,7 +130,7 @@
 
         <div class="cl-section">Performance</div>
         <ul class="cl-items">
-          <li><strong>LSP timeout reduced</strong> - 1500 ms → 800 ms. Halves the cold-LSP stall on first open.</li>
+          <li><strong>LSP timeout reduced</strong> - 1500 ms &rarr; 800 ms. Halves the cold-LSP stall on first open.</li>
           <li><strong>Small-file fast path</strong> - Files under 500 lines with an active LSP skip Tree-sitter + regex entirely, saving up to 1.2 s of WASM load.</li>
           <li><strong>Cold-start fast path (Ghost Index)</strong> - Persisted snapshots now load as trusted on activate. First open of a known file: tree paints in &lt;50 ms instead of 5-35 s.</li>
           <li><strong>Tiny file bypass</strong> - Files under 50 lines skip the 200 ms tab-spam backpressure window.</li>
@@ -206,7 +206,7 @@
     <div class="container">
       <h2>See the full iteration log.</h2>
       <p>Every round is documented in detail in the docs - rationale, files touched, and tests that lock the behaviour in.</p>
-      <a href="https://ghostmap-docs.vercel.app/" class="btn btn--outline btn--lg">Read the docs →</a>
+      <a href="https://ghostmap-docs.vercel.app/changelog" class="btn btn--outline btn--lg">Read the changelog &rarr;</a>
     </div>
   </section>
 </main>
@@ -225,9 +225,9 @@
         <li><a href="changelog.html">Changelog</a></li>
       </ul></div>
       <div class="footer__col"><h4>Resources</h4><ul>
-        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
-        <li><a href="https://ghostmap-docs.vercel.app/get-started/instalacion">Quick start</a></li>
-        <li><a href="https://ghostmap-docs.vercel.app/reference/sintaxis">Syntax reference</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/overview">Documentation</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/install">Install</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/reference/syntax">Syntax reference</a></li>
       </ul></div>
       <div class="footer__col"><h4>Legal</h4><ul>
         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -240,12 +240,12 @@
       <div class="footer__col"><h4>Community</h4><ul>
         <li><a href="../index.html#support">Support GhostMap</a></li>
         <li><a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
-        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/overview">Documentation</a></li>
       </ul></div>
     </div>
     <div class="footer__bottom">
-      <span>Free for personal, educational &amp; evaluation use · Commercial use needs a license</span>
-      <span>© <span id="year">2026</span> GhostMap</span>
+      <span>Free for personal, educational &amp; evaluation use &middot; Commercial use needs a license</span>
+      <span>&copy; <span id="year">2026</span> GhostMap</span>
     </div>
   </div>
 </footer>

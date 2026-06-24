@@ -20,11 +20,11 @@
   <meta property="og:title" content="How it works - GhostMap" />
   <meta property="og:description" content="How the Ghost Engine extracts symbols and how the Ghost Tree stays fast on 60k-line files." />
   <meta property="og:url" content="https://ghostmap-liard.vercel.app/pages/how-it-works.html" />
-  <meta property="og:image" content="../img/ghost-logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://ghostmap-liard.vercel.app/img/ghost-logo.png" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="How it works - GhostMap" />
   <meta name="twitter:description" content="How the Ghost Engine extracts symbols and how the Ghost Tree stays fast on 60k-line files." />
-  <meta name="twitter:image" content="../img/ghost-logo.png" />
+  <meta name="twitter:image" content="https://ghostmap-liard.vercel.app/img/ghost-logo.png" />
 
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
@@ -46,12 +46,12 @@
         <li><a href="how-it-works.html">How it works</a></li>
         <li><a href="roadmap.html">Roadmap</a></li>
         <li><a href="changelog.html">Changelog</a></li>
-        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Docs ↗</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/overview" target="_blank" rel="noopener">Docs &#8599;</a></li>
       </ul>
     </nav>
     <div class="nav__right">
       <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">Contact</a>
-      <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--sm">Install</a>
+      <a href="https://ghostmap-docs.vercel.app/install" class="btn btn--primary btn--sm">Install</a>
       <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -64,7 +64,7 @@
   <section class="hero hero--center">
     <div class="container">
       <div class="hero__eyebrow"><span class="dot"></span> How it works</div>
-      <h1>Code → Symbols →<br /><em>Ghost Tree.</em></h1>
+      <h1>Code &rarr; Symbols &rarr;<br /><em>Ghost Tree.</em></h1>
       <p class="hero__sub">
         GhostMap works in layers. Each layer builds on the previous one -
         the model is consistent whether you open a 10-line file or a 60,000-line one.
@@ -139,7 +139,7 @@
             <li>Workspace-wide <strong>Ghost Index v2</strong> as sharded JSON snapshots.</li>
             <li><strong>Ghost Watcher</strong> on the file system, debounced per URI.</li>
             <li>Incremental background indexing in a worker thread, off the Extension Host main loop.</li>
-            <li>Designed to keep the V1 active-file responsiveness untouched on the fast path.</li>
+            <li>Keeps V1 active-file responsiveness untouched on the fast path.</li>
           </ul>
         </div>
 
@@ -257,7 +257,7 @@
       </div>
 
       <div style="padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);font-size:0.88rem;color:var(--text-muted)">
-        Status values are normalized automatically: lowercased, trimmed, and spaces converted to hyphens (<code style="font-size:0.82em;color:var(--violet)">in progress</code> → <code style="font-size:0.82em;color:var(--violet)">in-progress</code>). If you use a value GhostMap doesn't recognize, it offers a quick fix with the closest match.
+        Status values are normalized automatically: lowercased, trimmed, and spaces converted to hyphens (<code style="font-size:0.82em;color:var(--violet)">in progress</code> &rarr; <code style="font-size:0.82em;color:var(--violet)">in-progress</code>). If you use a value GhostMap doesn't recognize, it offers a quick fix with the closest match.
       </div>
     </div>
   </section>
@@ -265,10 +265,10 @@
   <section class="cta-block">
     <div class="container">
       <h2>Try it on your own project.</h2>
-      <p>Install takes 10 seconds. Your first <code style="font-size:0.9em;color:var(--violet)">@ghost</code> takes 5.</p>
+      <p>Install from a local VSIX, then add your first <code style="font-size:0.9em;color:var(--violet)">@ghost</code> in minutes.</p>
       <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
-        <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--lg">Install &#8211; Local VSIX</a>
-        <a href="https://ghostmap-docs.vercel.app/get-started/primeros-5-minutos" class="btn btn--outline btn--lg">5-minute guide →</a>
+        <a href="https://ghostmap-docs.vercel.app/install" class="btn btn--primary btn--lg">Install (Local VSIX)</a>
+        <a href="https://ghostmap-docs.vercel.app/get-started/first-5-minutes" class="btn btn--outline btn--lg">5-minute guide &rarr;</a>
       </div>
     </div>
   </section>
@@ -288,9 +288,9 @@
         <li><a href="changelog.html">Changelog</a></li>
       </ul></div>
       <div class="footer__col"><h4>Resources</h4><ul>
-        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
-        <li><a href="https://ghostmap-docs.vercel.app/get-started/instalacion">Quick start</a></li>
-        <li><a href="https://ghostmap-docs.vercel.app/reference/sintaxis">Syntax reference</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/overview">Documentation</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/install">Install</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/reference/syntax">Syntax reference</a></li>
       </ul></div>
       <div class="footer__col"><h4>Legal</h4><ul>
         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -303,12 +303,12 @@
       <div class="footer__col"><h4>Community</h4><ul>
         <li><a href="../index.html#support">Support GhostMap</a></li>
         <li><a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
-        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/overview">Documentation</a></li>
       </ul></div>
     </div>
     <div class="footer__bottom">
-      <span>Free for personal, educational &amp; evaluation use · Commercial use needs a license</span>
-      <span>© <span id="year">2026</span> GhostMap</span>
+      <span>Free for personal, educational &amp; evaluation use &middot; Commercial use needs a license</span>
+      <span>&copy; <span id="year">2026</span> GhostMap</span>
     </div>
   </div>
 </footer>
