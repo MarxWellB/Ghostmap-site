@@ -51,7 +51,7 @@
     </nav>
     <div class="nav__right">
       <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">Contact</a>
-      <a href="https://ghostmap-docs.vercel.app/install" class="btn btn--primary btn--sm">Install</a>
+        <a href="https://marketplace.visualstudio.com/items?itemName=Ghostmap.ghostmap" class="btn btn--primary btn--sm">Install from VS Code Marketplace</a>
       <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -107,7 +107,7 @@
         <div>
           <div class="step__tag" style="margin-bottom:8px">Ghost Index &#8211; V1</div>
           <strong style="font-family:var(--font-display);font-size:0.95rem">Per-file snapshot &amp; instant reload</strong>
-          <p style="margin:6px 0 0;font-size:0.88rem;color:var(--text-muted)">After the first analysis of an active file, GhostMap persists the complete tree into the per-document Ghost Index &#8211; a local snapshot fingerprinted with the file&#8217;s content hash, stored under <code style="font-size:0.82em;color:var(--violet)">.ghostmap/ghostmap.json</code>. Every subsequent open of that same file loads from the snapshot in milliseconds, with zero LSP work. V1 is per-file: only files you have opened are cached.</p>
+          <p style="margin:6px 0 0;font-size:0.88rem;color:var(--text-muted)">After the first analysis of an active file, GhostMap persists the complete tree into the per-document Ghost Index &#8211; a local GhostMap snapshot fingerprinted with the file&#8217;s content hash. Every subsequent open of that same file loads from the snapshot in milliseconds, with zero LSP work. V1 is per-file: only files you have opened are cached.</p>
         </div>
       </div>
     </div>
@@ -127,9 +127,9 @@
           <h3>V1 &#8211; today <span class="feat-card__tag">shipped</span></h3>
           <ul style="margin:10px 0 0;padding-left:18px;font-size:0.9rem;color:var(--text-muted);line-height:1.6">
             <li>Active-file Ghost Tree from the best available local extractor.</li>
-            <li>Per-document snapshot in <code style="font-size:0.82em;color:var(--violet)">.ghostmap/ghostmap.json</code>.</li>
+            <li>Per-document local GhostMap snapshot.</li>
             <li>Fingerprint-validated reload, optimistic trust on activate.</li>
-            <li>No workspace-wide index, no file-system watcher, no background fingerprint validator (the previous one was removed in round 6 because it froze the host).</li>
+            <li>No workspace-wide index, no file-system watcher, no background fingerprint validator.</li>
           </ul>
         </div>
 
@@ -265,9 +265,9 @@
   <section class="cta-block">
     <div class="container">
       <h2>Try it on your own project.</h2>
-      <p>Install from a local VSIX, then add your first <code style="font-size:0.9em;color:var(--violet)">@ghost</code> in minutes.</p>
+      <p>Install from the VS Code Marketplace, then add your first <code style="font-size:0.9em;color:var(--violet)">@ghost</code> in minutes.</p>
       <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
-        <a href="https://ghostmap-docs.vercel.app/install" class="btn btn--primary btn--lg">Install (Local VSIX)</a>
+        <a href="https://marketplace.visualstudio.com/items?itemName=Ghostmap.ghostmap" class="btn btn--primary btn--lg">Install from VS Code Marketplace</a>
         <a href="https://ghostmap-docs.vercel.app/get-started/first-5-minutes" class="btn btn--outline btn--lg">5-minute guide &rarr;</a>
       </div>
     </div>

@@ -60,7 +60,7 @@
     </nav>
     <div class="nav__right">
       <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">Contact</a>
-      <a href="https://ghostmap-docs.vercel.app/install" class="btn btn--primary btn--sm">Install</a>
+        <a href="https://marketplace.visualstudio.com/items?itemName=Ghostmap.ghostmap" class="btn btn--primary btn--sm">Install from VS Code Marketplace</a>
     </div>
   </div>
 </header>
@@ -96,7 +96,7 @@
       <p>All of the above stays inside the VS Code process. None of it is transmitted off your machine by GhostMap.</p>
 
       <h2>3. What data the extension stores locally</h2>
-      <p>GhostMap maintains a per-workspace cache file at <code>&lt;workspace&gt;/.ghostmap/ghostmap.json</code>. This file contains the symbol tree, anchors, and metadata for files you have opened. It is capped at 2 megabytes and is stored exclusively on your filesystem. It is never transmitted anywhere. You can delete it at any time without consequence beyond a slower first-open of recently used files.</p>
+      <p>GhostMap maintains a local workspace snapshot. This snapshot contains the symbol tree, anchors, and metadata for files you have opened. It is capped at 2 megabytes and is stored exclusively on your filesystem. It is never transmitted anywhere. You can delete it at any time without consequence beyond a slower first-open of recently used files.</p>
 
       <h2>4. Network activity</h2>
       <p>The GhostMap extension itself makes zero outbound network requests. The VS Code application and the Language Servers you have installed may make their own network requests according to their respective policies. GhostMap has no involvement in those.</p>
